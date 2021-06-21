@@ -1,0 +1,18 @@
+<div class="container jumbotron mt-5 px-5">
+  <div class="row">
+    <h1>OnlyChat</h1>
+    <br />
+    <hr />
+  </div>
+
+  <div class="row mt-5">
+    <textarea id="messages" class="w-100" rows="18" placeholder="Wait while loading..." readonly>{{ messages | async }}</textarea>
+  </div>
+
+  <div class="mt-5">
+    <form class="form-inline row" [formGroup]="messageSenderForm" (ngSubmit)="onSubmit()">
+      <input class="form-control col mr-2" type="text" placeholder="Message" formControlName="message" id="message" required />
+      <input class="btn btn-primary col-1" type="submit" value="Send" />
+    </form>
+  </div>
+</div>
