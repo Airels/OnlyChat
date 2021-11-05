@@ -1,4 +1,4 @@
-package com.example.onlychat.model.config;
+package com.example.onlychat.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
