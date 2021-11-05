@@ -1,38 +1,39 @@
 package com.example.onlychat.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
+import com.example.onlychat.model.data.entities.UsersEntity;
 
 public class User {
 
-    @Id
-    private String id;
-    @Indexed(unique = true)
+    private int id;
     private String username;
     private String password;
 
-
-    public String getId() {
-        return id;
+    public User(int id, String username, String password) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public User(UsersEntity entity) {
+        this.id = entity.getId();
+        this.username = entity.getUsername();
+        this.password = entity.getPassword();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }

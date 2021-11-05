@@ -13,9 +13,14 @@ import java.util.List;
 @Configuration
 public class MessageDB {
 
-    private final List<Message> messages = new ArrayList<>();
+    private final List<Message> messages;
+
+    public MessageDB() {
+        messages = Database.getMessages();
+    }
 
     public boolean postMessage(Message message) {
+        Database.pushMessage(message);
         return messages.add(message);
     }
 

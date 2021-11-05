@@ -1,4 +1,4 @@
-package com.example.onlychat.model.config;
+package com.example.onlychat.config;
 
 import com.example.onlychat.model.handlers.SocketHandler;
 import org.springframework.context.annotation.Bean;
