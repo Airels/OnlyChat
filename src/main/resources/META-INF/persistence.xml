@@ -11,8 +11,8 @@
     <properties>
       <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/onlychat"/>
       <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="hibernate.connection.username" value="airels"/>
-      <property name="hibernate.connection.password" value="snoopy"/>
+      <property name="hibernate.connection.username" value="onlychat"/>
+      <property name="hibernate.connection.password" value="onlychat"/>
       <property name="hibernate.show_sql" value="true"/>
     </properties>
   </persistence-unit>

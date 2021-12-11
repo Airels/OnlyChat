@@ -3,12 +3,13 @@ import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {CookieService} from "ngx-cookie";
 import {UserService} from "./user.service";
+import {environment} from "../../environments/environment";
 
 @Injectable({
 providedIn: 'root'
 })
 export class HttpRequestService {
-    private serverURL = "http://localhost:8080";
+    private serverURL = environment.vars.url.httpServerURL;
     private httpOptions = {
         headers: new HttpHeaders({
             'Content-Type': 'application/x-www-form-urlencoded'

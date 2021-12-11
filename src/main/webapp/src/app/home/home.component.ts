@@ -6,6 +6,7 @@ import {Message} from "../models/message";
 import {observable, Observable} from "rxjs";
 import {UserService} from "../services/user.service";
 import {min} from "rxjs/operators";
+import {environment} from "../../environments/environment";
 
 @Component({
     selector: 'app-home',
@@ -34,12 +35,12 @@ export class HomeComponent implements OnInit {
         audio.load();
 
         this.refreshMessages();
-        this.webSocketService.createObservableSocket('ws://localhost:8080/test').subscribe((res) => {
+        this.webSocketService.createObservableSocket(environment.vars.url.webSocketURL).subscribe((res: string) => {
             console.log(`WebSocket: ${res}`);
 
             if (res === "ping") {
                 this.getMessages().subscribe((username: string) => {
-                    if (username != this.userService.getUsername())
+                    if (username.toUpperCase() != this.userService.getUsername().toUpperCase())
                         audio.play();
                 });
             }

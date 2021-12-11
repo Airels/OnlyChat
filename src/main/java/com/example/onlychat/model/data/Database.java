@@ -18,7 +18,7 @@ public class Database {
 
         try {
             TypedQuery<UsersEntity> query = entityManager.createNamedQuery("UsersEntity.get", UsersEntity.class);
-            query.setParameter(1, username);
+            query.setParameter("username", username);
 
             return new User(query.getSingleResult());
         } catch (NoResultException e) {
@@ -33,8 +33,8 @@ public class Database {
 
         try {
             TypedQuery<UsersEntity> query = entityManager.createNamedQuery("UsersEntity.login", UsersEntity.class);
-            query.setParameter(1, username);
-            query.setParameter(2, password);
+            query.setParameter("username", username);
+            query.setParameter("password", password);
 
             return new User(query.getSingleResult());
         } catch (NoResultException e) {

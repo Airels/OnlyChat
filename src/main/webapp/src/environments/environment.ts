@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+    production: false,
+    vars: {
+        url: {
+            httpServerURL: "http://localhost:8080",
+            webSocketURL: "ws://localhost:8080/notifications"
+        }
+    }
 };
 
 /*

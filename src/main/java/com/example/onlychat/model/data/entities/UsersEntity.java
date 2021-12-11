@@ -4,8 +4,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "users", schema = "onlychat", catalog = "")
-@NamedQuery(name = "UsersEntity.get", query = "SELECT e FROM UsersEntity e WHERE e.username = ?1")
-@NamedQuery(name = "UsersEntity.login", query = "SELECT e FROM UsersEntity e WHERE e.username = ?1 AND e.password = ?2")
+@NamedQuery(name = "UsersEntity.get", query = "from UsersEntity where username = :username")
+@NamedQuery(name = "UsersEntity.login", query = "from UsersEntity where username = :username AND password = :password")
 public class UsersEntity {
     private int id;
     private String username;
